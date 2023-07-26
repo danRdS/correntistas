@@ -555,16 +555,17 @@ button[id=pesquisar]{
 }
 
 .fieldsData{
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     position: relative;
 }
 
 .inputNewAccount{
-    all: unset;
+    /* all: unset; */
+    background: transparent;
+    outline: none;
     border: 1.5px solid grey;
     border-radius: 2rem;
-    width: 85%;
     margin: .8rem;
     padding: .7rem 1.2rem;
     caret-color: var(--variantBlue);
@@ -578,7 +579,7 @@ button[id=pesquisar]{
 .fieldsData .description{
     position: absolute;
     left: 2.2rem;
-    top: 25px;
+    top: 23px;
     pointer-events: none;
     letter-spacing: .8px;
     transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
