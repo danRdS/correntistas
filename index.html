@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/building-columns-solid.svg">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/styleTable.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Correntistas</title>
+</head>
+<body>
+    <header>
+        <button class="hamburguer">
+            <span class="bar"></span>
+        </button>
+
+        <aside></aside>
+        <div class="menu-lateral">
+            <section class="menu-container">
+                <div class="menu-logo">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h2>Bank</h2>
+                </div>
+                <ul class="links ulAction">
+                    <h3>Ação</h3>
+                    <li class="link" id="addAccount">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span class="spanAddAccount">Add nova conta</span>
+                    </li>
+                    <hr class="divisionRow">
+                </ul>
+                <ul class="links">
+                    <h3>Siga-nos</h3>
+                    <li class="link">
+                        <a href="https://www.instagram.com/daniel_ribeiro_da_silva/" class="link" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span class="spanLink">instagram</span>
+                        </a>
+                    </li>
+                    <li class="link">
+                        <a href="https://github.com/danRdS" class="link" target="_blank">
+                            <i class="fa-brands fa-github"></i>
+                            <span class="spanLink">github</span>
+                        </a>
+                    </li>
+                    <li class="link">
+                        <a href="https://www.youtube.com/@danielribeirodasilva9443/featured" class="link" target="_blank">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span class="spanLink">youtube</span>
+                        </a>
+                    </li>
+                    <li class="link">
+                        <a href="https://twitter.com/Daniel79023629" class="link" target="_blank">
+                            <i class="fa-brands fa-twitter"></i>
+                            <span class="spanLink">twitter</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="credits">
+                    <h4 class="titulo">DRS</h4>
+                    <p>&copy;DRS</p>
+                </div>
+            </section>
+        </div>
+        <h1 class="titulo">DRS</h1>
+    </header>
+    
+    <main class="container">
+        <div class="initialView sectionView">
+            <table border="1" align="center" cellspacing="0" class="mainTable">
+                <thead>
+                    <tr>
+                        <th colspan="5" class="mainTitleTable">Contas</th>
+                    </tr>
+                    <tr>
+                        <th class="propsTables">Conta</th>
+                        <th class="propsTables">Tipo</th>
+                        <th class="propsTables">Titular</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+
+            <form action="" id="pesquisaConta">
+                <fieldset class="pesquisa-conta-fieldset">
+                    <legend>Pesquisar</legend>
+                    <input type="number" name="num-conta" min="1" id="num-conta" required>
+                    <span class="spanConta">Conta</span>
+                    <button type="submit" id="pesquisar" class="btn">Pesquisar</button>
+                </fieldset>
+            </form>
+
+            <div class="modal modalCharging">
+                <div class="loader"></div>
+            </div>
+
+            <div class="modalError modal">
+                <section class="popupErrorMessage">
+                    <span id="messageError"></span>
+                    <button id="closeError">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <div class="secondView sectionView">           
+            <section class="tela-conta-selecionada">
+                <table border="1" align="center" cellspacing="0" class="ShowAcountTable"></table>
+
+                <div class="fieldBtns">
+                    <button class="btn" id="toInitialView">Voltar</button>
+                    <button class="btn" id="alterar">Alterar</button>
+                    <button class="btn" id="movimentar">Movimentar</button>
+                    <button class="btn" id="delete">Excluir</button>
+                </div>               
+            </section>
+
+            <span class="chargingBar"></span>
+
+            <div class="modalDeleteAccount modal">
+                <section class="popupDeleteAccount popup">
+                    <span class="infoDeleteAccount">Excluir conta?</span>
+                    <div class="fieldBtn">
+                        <button class="btn" id="cancelDelete">Cancelar</button>
+                        <button class="btn" id="confirmDelete">Confirmar</button>
+                    </div>
+                </section>
+                <section class="popupDeleteAccountConfirmed popup">
+                    <span class="infoDeleteAccount">Cofirmado</span>
+                    <button class="btn" id="deleteConfirmed">Ok</button>
+                </section>
+            </div>    
+        </div>
+
+        <div class="thirdView sectionView">
+            <section class="screenChangingData">
+                <form action="" id="formChangingData">
+                    <fieldset class="fieldForChangingData">
+                        <legend>Alteração de Dados</legend>
+                        <label for="novoNome" class="description">Novo nome:</label>
+                        <input class="inputChangingData" type="text" name="novoNome" id="novoNome" placeholder="Titular" required>
+                        <label for="novaConta" class="description">Nova conta:</label>
+                        <input class="inputChangingData" type="number" name="novaConta" id="novaConta" placeholder="Conta" min="1" required>
+                       
+                        <section class="fieldButton">
+                            <button type="button" class="btn" id="cancelChanges">Cancelar</button>
+                            <button type="submit" class="btn" id="saveChanges">Confirmar</button>
+                        </section>
+                    </fieldset>
+                </form>
+            </section>
+
+            <div class="modal modalNoConfirmedChanges">
+                <section class="popup popupNoConfirmedChanges">
+                    <span class="infoChangesNotConfirmed"></span>
+                    <button class="btn" id="okChangesNotConfirmed">Ok</button></section>
+            </div>
+
+            <div class="modal modalConfirmChangesData">
+                <section class="popup">
+                    <span class="infoChangesConfirmed">Alterações salvas</span>
+                    <button class="btn" id="changesOk">Ok</button>
+                </section>
+            </div>
+
+        </div>
+
+        <div class="screenMovimentView sectionView">
+            <section class="screenMoviment">
+                <div class="title-bar-Transation">
+                    <button id="backToSecondView">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <h1>Movimentação</h1>
+                </div>
+
+                <p id="infoTitular" class="paragrafo"></p>
+                <p id="infoNumConta" class="paragrafo"></p>
+                <p id="infoSaldoConta" class="paragrafo"></p>
+
+                <div class="fieldInfoPJ">
+                    <p id="infoInvestimento" class="paragrafo">Valor investido:</p>
+                    <p id="infoSaldoTotal" class="paragrafo">Saldo Total:</p>
+                </div>
+                
+                <section class="fieldButton fieldButtonTransation" id="fieldButtonTransation">
+                    <button type="button" class="btn" id="deposito">Depósito</button>
+                    <button type="button" class="btn" id="saque">Saque</button>
+                    <button type="button" class="btn" id="investir">Investir</button>
+                    <button type="button" class="btn" id="resgatar">Resgatar</button>
+                </section>
+
+                <form action="" class="formDeposito">
+                    <fieldset class="fieldsetDeposito">
+                        <legend>Preencha os Dados</legend>
+                        <label for="inpTransation" id="labelTransation"></label>
+                        <input type="number" name="inpTransation" id="inpTransation" class="inpTransation" min="0.01" step="0.010" required>
+                        <span>Valor</span>
+                        <section class="fieldBtns">
+                            <button type="button" class="btn" id="cancelTransation">Cancelar</button>
+                            <button type="submit" class="btn" id="confirmTransation">Confirmar</button>
+                        </section>
+                    </fieldset>
+                </form>                
+            </section>
+
+            <div class="modal modalOperacaoNegada">
+                <section class="popup">
+                    <span id="infoOperacaoNegada"></span>
+                    <button class="btn" id="okOperacaoNegada">Ok</button>
+                </section>
+            </div>
+            <div class="modal modalOperacaoConfirmada">
+                <section class="popup popupOperacaoConfirmada">
+                    <span id="infoOperacaoConfirmada">Confirmado</span>
+                    <button class="btn" id="okOperacaoConfirmada">Ok</button>
+                </section>
+            </div>
+        </div>
+
+        <div class="newAccountView sectionView">
+            <section class="screenNewAccount">
+                <form action="" class="formNewAccount">
+                    <fieldset class="fieldDataNewAccount">
+                        <legend id="legendNewAccount">Nova Conta PF</legend>
+                        <section class="fieldsData">
+                            <input type="text" name="Titular" id="titularAdd" class="inputNewAccount" required>
+                            <span class="description">Titular</span>
+                        </section>
+                        <section class="fieldsData">
+                            <input type="number" name="saldoAdd" id="saldoAdd" min="0" class="inputNewAccount" step="0.010" required>
+                            <span class="description">Saldo</span>
+                        </section>
+                        <input type="checkbox" class="checkboxPJ">
+                        <section class="fieldsData" id="fieldsDataPJ">
+                            <input type="number" name="InvestimentoAdd" id="investimentoAdd" min="0" class="inputNewAccount">
+                            <span class="description">Investimento</span>
+                        </section>
+                        
+                        <div class="fieldBtns">
+                            <button type="button" class="btn" id="goHome">Home</button>
+                            <button type="submit" class="btn" id="saveNewAccount">Salvar</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+            </section>
+
+            <div class="modal modalConfirmedNewAccount">
+                <section class="popup">
+                    <span class="infoConfirmdeNewAccount">Salvo!</span>
+                    <button class="btn" id="okConfirmedNewAccount">Ok</button>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <button id="toTop" class="toTop">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <script type="module" src="assets/scriptTable.js"></script>
+</body>
+</html>
