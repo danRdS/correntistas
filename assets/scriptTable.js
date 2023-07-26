@@ -544,7 +544,7 @@ function showAcountTableFunction(isPJ, correntista){
         } else {
             secondTable.innerHTML = `<thead>
                                         <tr>
-                                            <th colspan="2" class="thTitle">Conta PJ</th>
+                                            <th colspan="2" class="thTitle">Conta PF</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -568,7 +568,7 @@ function showAcountTableFunction(isPJ, correntista){
             if(largura > 420){
                 secondTable.innerHTML = `<thead>
                                             <tr>
-                                                <th colspan="3" class="thTitle">Conta PJ</th>
+                                                <th colspan="3" class="thTitle">Conta PF</th>
                                             </tr>
                                             <tr>
                                                 <th class="thSecundary">Conta</th>
@@ -586,7 +586,7 @@ function showAcountTableFunction(isPJ, correntista){
             } else {
                 secondTable.innerHTML = `<thead>
                                             <tr>
-                                                <th colspan="2" class="thTitle">Conta PJ</th>
+                                                <th colspan="2" class="thTitle">Conta PF</th>
                                             </tr>
                                         </thead>
                                         <tbody>
