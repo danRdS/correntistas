@@ -577,18 +577,21 @@ button[id=pesquisar]{
 .fieldsData .description{
     position: absolute;
     left: 2.2rem;
-    transform: translateY(120%);
+    /* transform: translateY(120%); */
+    /* transform: scale(1); */
+    top: 25px;
     pointer-events: none;
     letter-spacing: .8px;
     transition: all .4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
 .inputNewAccount:is(:focus, :valid, :out-of-range) + .description{
-    transform: translateY(8%) scale(.8);
+    /* transform: translateY(8%) scale(.8); */
+    transform: scale(.8);
+    top: 0;
     padding: 0 .4rem;
     color: var(--variantBlue);
-    background-color: color-mix(in srgb-linear, #120c56 20%, #000000 100%);  
-
+    background-color: color-mix(in srgb-linear, #120c56 20%, #000000 100%);
 }
 
 .checkboxPJ {
