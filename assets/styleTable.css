@@ -289,6 +289,7 @@ aside.opened{
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
 /* TELA INICIAL */
@@ -485,6 +486,17 @@ button[id=pesquisar]{
 .modalCharging.visible{
     visibility: visible;
     opacity: 1;
+}
+
+.container-loader{
+    background-color: var(--hover);
+    min-width: 120px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .loader{
