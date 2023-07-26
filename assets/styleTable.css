@@ -555,8 +555,8 @@ button[id=pesquisar]{
 }
 
 .fieldsData{
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     position: relative;
 }
 
@@ -564,6 +564,7 @@ button[id=pesquisar]{
     all: unset;
     border: 1.5px solid grey;
     border-radius: 2rem;
+    width: 85%;
     margin: .8rem;
     padding: .7rem 1.2rem;
     caret-color: var(--variantBlue);
@@ -577,8 +578,6 @@ button[id=pesquisar]{
 .fieldsData .description{
     position: absolute;
     left: 2.2rem;
-    /* transform: translateY(120%); */
-    /* transform: scale(1); */
     top: 25px;
     pointer-events: none;
     letter-spacing: .8px;
@@ -586,9 +585,8 @@ button[id=pesquisar]{
 }
 
 .inputNewAccount:is(:focus, :valid, :out-of-range) + .description{
-    /* transform: translateY(8%) scale(.8); */
     transform: scale(.8);
-    top: 0;
+    top: 2px;
     padding: 0 .4rem;
     color: var(--variantBlue);
     background-color: color-mix(in srgb-linear, #120c56 20%, #000000 100%);
