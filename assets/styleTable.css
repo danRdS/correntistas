@@ -561,9 +561,7 @@ button[id=pesquisar]{
 }
 
 .inputNewAccount{
-    /* all: unset; */
-    background: transparent;
-    outline: none;
+    all: unset;
     border: 1.5px solid grey;
     border-radius: 2rem;
     margin: .8rem;
