@@ -488,17 +488,6 @@ button[id=pesquisar]{
     opacity: 1;
 }
 
-.container-loader{
-    background-color: var(--hover);
-    min-width: 120px;
-    aspect-ratio: 1;
-    border-radius: 4px;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .loader{
     width: 50px;
     aspect-ratio: 1;
