@@ -605,13 +605,14 @@ button[id=pesquisar]{
 }
 
 .checkboxPJ::before{
-    content: 'Criar conta PJ:';
+    content: 'Criar conta PJ: ';
     position: absolute;
     transform: translateY(-3.5px);
-    right: 1rem;
+    right: 1.2rem;
     color: var(--colorFont);
     letter-spacing: 1px;
-    width: 100px;
+    width: 120px;
+    text-align: end;
 }
 
 .checkboxPJ:checked{    
