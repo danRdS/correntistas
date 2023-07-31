@@ -184,26 +184,17 @@ btnGoHome.addEventListener('click', () => {
 })
 
 const checkboxPJ = document.querySelector('.checkboxPJ');
+const flipLegend = document.querySelector('.flipLegend');
 
 checkboxPJ.addEventListener('click', () => {
     if(checkboxPJ.checked){
         investimentoAdd.setAttribute('required', 'required');
-        legendNewAccount.classList.add('clicked');
-        setTimeout(() => {
-            legendNewAccount.innerText = 'Nova Conta PJ';
-            legendNewAccount.classList.remove('clicked');
-        }, 900);
+        flipLegend.classList.add('clicked');
     } else {
         investimentoAdd.removeAttribute('required');
-        legendNewAccount.classList.add('clicked');
-        setTimeout(() => {
-            legendNewAccount.innerText = 'Nova Conta PF';
-            legendNewAccount.classList.remove('clicked');
-        }, 900);
+        flipLegend.classList.remove('clicked');
     }
 })
-
-const legendNewAccount = document.getElementById('legendNewAccount');
 
 function addAccountFunction(nome, saldo, investimento, dataForSaving){
     if(checkboxPJ.checked){
